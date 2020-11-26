@@ -7,6 +7,8 @@ import json
 #TOKEN = os.environ.get('TOKEN')
 #bot = telebot.TeleBot(TOKEN)
 
+TOKEN = '1243846647:AAErXaEeJODvimG7HhPBbRZPVsIGWCT6z60'
+bot = telebot.TeleBot(TOKEN)
 
 server = Flask(__name__)
 
@@ -21,7 +23,7 @@ def start(message):
 
 
 @bot.message_handler(commands=['help'])
-def start(message):
+def help(message):
     res = '/courses - список курсов \n' \
           '/planning - расписание запуска курсов,'
     bot.reply_to(message, res)
@@ -57,7 +59,7 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://python-test-bot-21-11-2020.herokuapp.com/' + TOKEN)
+    bot.set_webhook(url='https://https://yutestbot2211.herokuapp.com/' + TOKEN)
     return "Python Telegram Bot 21-11-2020", 200
 
 
